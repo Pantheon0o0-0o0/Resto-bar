@@ -1,0 +1,365 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+:root {
+    --red: #ff0000;
+    --black: #000000;
+    --white: #ffffff;
+    --gray: #666666;
+    --yellow: #edff00;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --border-color: rgba(0, 0, 0, 0.3);
+}
+
+* {
+    font-family: "Oswald", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-transform: capitalize;
+    transition: all 0.2s linear;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+body {
+    background: var(--white);
+    line-height: 1.6;
+}
+
+section {
+    padding: 2rem 9%;
+}
+
+.heading {
+    text-align: center;
+    font-size: 3.5rem;
+    padding: 1rem;
+    color: var(--gray);
+}
+
+.heading span {
+    color: var(--red);
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 3rem;
+    border: 0.2rem solid var(--red);
+    color: var(--black);
+    cursor: pointer;
+    font-size: 1.7rem;
+    border-radius: 0.5rem;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    margin-top: 1rem;
+    text-decoration: none;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0; 
+    width: 0%;
+    height: 100%;
+    background: var(--red);
+    transition: width 0.3s linear;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+.btn:hover {
+    color: var(--white);
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--black);
+    padding: 2rem 9%;
+    box-shadow: 0 0.5rem 1rem var(--shadow-color);
+}
+
+header .logo {
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color: var(--red);
+    text-decoration: none;
+}
+
+header .logo i {
+    padding-right: 0.5rem;
+    color: var(--red);
+}
+
+header .navbar a {
+    font-size: 2rem;
+    margin-left: 2rem;
+    color: var(--white);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header .navbar a:hover {
+    color: var(--red);
+}
+
+#menu-bar {
+    font-size: 3rem;
+    cursor: pointer;
+    color: var(--gray);
+    border: 0.1rem solid var(--gray);
+    border-radius: 0.3rem;
+    padding: 0.5rem 1.5rem;
+    display: none;
+}
+
+/* Home */
+.home {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    min-height: 100vh;
+    align-items: center;
+    background-image: url(../img/rrrrr.jpg); /* Ajusta la ruta según tu estructura */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.home .content {
+    flex: 1 1 40rem;
+    padding-top: 6.5rem;
+}
+
+.home .image {
+    flex: 1 1 40rem;
+}
+
+.home .image img {
+    width: 75%;
+    padding: 1rem;
+    animation: float 3s linear infinite;
+    border-radius: 200px;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0rem);
+    }
+    50% {
+        transform: translateY(3rem);
+    }
+}
+
+.home .content h3 {
+    font-size: 5rem;
+    color: var(--yellow);
+}
+
+.home .content p {
+    font-size: 1.7rem;
+    color: var(--white);
+    padding: 2rem 0;
+}
+
+/* Speciality */
+.speciality .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.speciality .box-container .box {
+    flex: 1 1 30rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 1rem var(--shadow-color);
+    border: 1rem solid var(--border-color);
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+.speciality .box-container .box .image {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: -100%;
+    left: 0;
+    transition: top 0.3s ease;
+}
+
+.speciality .box-container .box:hover .image {
+    top: 0;
+}
+
+.popular .box-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.popular .box-container .box {
+    padding: 2rem;
+    background: #fff;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    border: 0.1rem solid rgba(0, 0, 0, 0.3);
+    border-radius: 0.5rem;
+    text-align: center;
+    flex: 1 1 30rem;
+    position: relative;
+}
+
+.popular .box-container .box .price {
+    position: absolute;
+    top: 3rem;
+    left: 3rem;
+    background: var(--red);
+    color: #fff;
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+}
+
+/*footer*/
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Iconos de redes sociales */
+.social-icons {
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto hover */
+.social-icons a:hover {
+    transform: scale(1.2);
+}
+
+/* Colores específicos para cada red social */
+.instagram:hover { color: #E1306C; }  /* Instagram - rosa */
+.facebook:hover { color: #1877F2; }   /* Facebook - azul */
+.tiktok:hover { color: #000; }        /* TikTok - negro */
+
+
+/*wasap*/
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    color: white;
+    font-size: 30px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efecto hover */
+.whatsapp-float:hover {
+    transform: scale(1.1);
+    background-color: #1ebe5d;
+}
+
+/* Media Queries */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    header {
+        padding: 2rem;
+    }
+
+    section {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu-bar {
+        display: block;
+    }
+
+    header .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--white);
+        border-top: 0.1rem solid var(--shadow-color);
+        display: none;
+    }
+
+    header .navbar.active {
+        display: block;
+    }
+
+    header .navbar a {
+        margin: 1.5rem;
+        padding: 1rem;
+        background: var(--black);
+        color: var(--white);
+        display: block;
+        text-align: center;
+    }
+}
+
+@media (max-width: 400px) {
+    html {
+        font-size: 50%;
+    }
+}
